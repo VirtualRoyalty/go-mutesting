@@ -6,7 +6,7 @@ require (
 	github.com/fatih/color v1.18.0
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/stretchr/testify v1.9.0
-	github.com/zimmski/osutil v1.6.1
+	github.com/VirtualRoyalty/osutil v1.0.0
 	golang.org/x/tools v0.31.0
 	gopkg.in/yaml.v3 v3.0.1
 )
