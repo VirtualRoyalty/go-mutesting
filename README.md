@@ -1,4 +1,4 @@
-# go-mutesting [![GoDoc](https://godoc.org/github.com/avito-tech/go-mutesting?status.png)](https://godoc.org/github.com/avito-tech/go-mutesting) [![Build Status](https://travis-ci.org/avito-tech/go-mutesting.svg?branch=master)](https://travis-ci.org/avito-tech/go-mutesting) [![Coverage Status](https://coveralls.io/repos/avito-tech/go-mutesting/badge.png?branch=master)](https://coveralls.io/r/avito-tech/go-mutesting?branch=master)
+# go-mutesting [![GoDoc](https://godoc.org/github.com/VirtualRoyalty/go-mutesting?status.png)](https://godoc.org/github.com/VirtualRoyalty/go-mutesting) [![Build Status](https://travis-ci.org/VirtualRoyalty/go-mutesting.svg?branch=master)](https://travis-ci.org/VirtualRoyalty/go-mutesting) [![Coverage Status](https://coveralls.io/repos/VirtualRoyalty/go-mutesting/badge.png?branch=master)](https://coveralls.io/r/VirtualRoyalty/go-mutesting?branch=master)
 
 go-mutesting is a framework for performing mutation testing on Go source code. Its main purpose is to find source code, which is not covered by any tests.
 
@@ -7,7 +7,7 @@ go-mutesting is a framework for performing mutation testing on Go source code. I
 The following command mutates the go-mutesting project with all available mutators.
 
 ```bash
-go-mutesting github.com/avito-tech/go-mutesting/...
+go-mutesting github.com/VirtualRoyalty/go-mutesting/...
 ```
 
 The execution of this command prints for every mutation if it was successfully tested or not. If not, the source code patch is printed out, so the mutation can be investigated. The following shows an example for a patch of a mutation.
@@ -25,7 +25,7 @@ for _, d := range opts.Mutator.DisableMutators {
 
 The example shows that the right term `(!pattern && name == d)` of the `||` operator is made irrelevant by substituting it with `false`. Since this change of the source code is not detected by the test suite, meaning the test suite did not fail, we can mark it as untested code.
 
-The next mutation shows code from the `removeNode` method of a [linked list](https://github.com/avito-tech/container/blob/master/list/linkedlist/linkedlist.go) implementation.
+The next mutation shows code from the `removeNode` method of a [linked list](https://github.com/VirtualRoyalty/container/blob/master/list/linkedlist/linkedlist.go) implementation.
 
 ```diff
 	}
@@ -67,7 +67,7 @@ Mutation testing is also especially interesting for comparing automatically gene
 go-mutesting includes a binary which is go-getable.
 
 ```bash
-go get -t -v github.com/avito-tech/go-mutesting/...
+go get -t -v github.com/VirtualRoyalty/go-mutesting/...
 ```
 
 The binary's help can be invoked by executing the binary without arguments or with the `--help` argument.
@@ -83,7 +83,7 @@ The targets of the mutation testing can be defined as arguments to the binary. E
 The following example gathers all Go files which are defined by the targets and generate mutations with all available mutators of the binary.
 
 ```bash
-go-mutesting parse.go example/ github.com/avito-tech/go-mutesting/mutator/...
+go-mutesting parse.go example/ github.com/VirtualRoyalty/go-mutesting/mutator/...
 ```
 
 Every mutation has to be tested using an [exec command](#write-mutation-exec-commands). By default the built-in exec command is used, which tests a mutation using the following steps:
@@ -92,10 +92,10 @@ Every mutation has to be tested using an [exec command](#write-mutation-exec-com
 - Execute all tests of the package of the mutated file.
 - Report if the mutation was killed.
 
-Alternatively the `--exec` argument can be used to invoke an external exec command. The [/scripts/exec](/scripts/exec) directory holds basic exec commands for Go projects. The [test-mutated-package.sh](/scripts/exec/test-mutated-package.sh) script implements all steps and almost all features of the built-in exec command. It can be for example used to test the [github.com/avito-tech/go-mutesting/example](/example) package.
+Alternatively the `--exec` argument can be used to invoke an external exec command. The [/scripts/exec](/scripts/exec) directory holds basic exec commands for Go projects. The [test-mutated-package.sh](/scripts/exec/test-mutated-package.sh) script implements all steps and almost all features of the built-in exec command. It can be for example used to test the [github.com/VirtualRoyalty/go-mutesting/example](/example) package.
 
 ```bash
-go-mutesting --exec "$GOPATH/src/github.com/avito-tech/go-mutesting/scripts/exec/test-mutated-package.sh" github.com/avito-tech/go-mutesting/example
+go-mutesting --exec "$GOPATH/src/github.com/VirtualRoyalty/go-mutesting/scripts/exec/test-mutated-package.sh" github.com/VirtualRoyalty/go-mutesting/example
 ```
 
 The execution will print the following output.
@@ -103,9 +103,9 @@ The execution will print the following output.
 > **Note**: This output is from an older version of go-mutesting. Up to date versions of go-mutesting will have different mutations.
 
 ```diff
-PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.0" with checksum b705f4c99e6d572de509609eb0a625be
-PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.1" with checksum eb54efffc5edfc7eba2b276371b29836
-PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.2" with checksum 011df9567e5fee9bf75cbe5d5dc1c81f
+PASS "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.0" with checksum b705f4c99e6d572de509609eb0a625be
+PASS "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.1" with checksum eb54efffc5edfc7eba2b276371b29836
+PASS "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.2" with checksum 011df9567e5fee9bf75cbe5d5dc1c81f
 --- Original
 +++ New
 @@ -16,7 +16,7 @@
@@ -117,9 +117,9 @@ PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/
         }
 
         n++
-FAIL "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.3" with checksum 82fc14acf7b561598bfce25bf3a162a2
-PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.4" with checksum 5720f1bf404abea121feb5a50caf672c
-PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.5" with checksum d6c1b5e25241453128f9f3bf1b9e7741
+FAIL "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.3" with checksum 82fc14acf7b561598bfce25bf3a162a2
+PASS "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.4" with checksum 5720f1bf404abea121feb5a50caf672c
+PASS "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.5" with checksum d6c1b5e25241453128f9f3bf1b9e7741
 --- Original
 +++ New
 @@ -24,7 +24,6 @@
@@ -130,8 +130,8 @@ PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/
 
         return n
  }
-FAIL "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.6" with checksum 5b1ca0cfedd786d9df136a0e042df23a
-PASS "/tmp/go-mutesting-422402775//home/avito-tech/go/src/github.com/avito-tech/go-mutesting/example/example.go.8" with checksum 6928f4458787c7042c8b4505888300a6
+FAIL "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.6" with checksum 5b1ca0cfedd786d9df136a0e042df23a
+PASS "/tmp/go-mutesting-422402775//home/VirtualRoyalty/go/src/github.com/VirtualRoyalty/go-mutesting/example/example.go.8" with checksum 6928f4458787c7042c8b4505888300a6
 The mutation score is 0.750000 (6 passed, 2 failed, 0 skipped, total is 8)
 ```
 
@@ -154,7 +154,7 @@ The example output of the [How do I use go-mutesting?](#how-do-i-use-go-mutestin
 The blacklist file, which is named `example.blacklist` in this example, can then be used to invoke go-mutesting.
 
 ```bash
-go-mutesting --blacklist example.blacklist github.com/avito-tech/go-mutesting/example
+go-mutesting --blacklist example.blacklist github.com/VirtualRoyalty/go-mutesting/example
 ```
 
 The execution will print the following output.
@@ -291,7 +291,7 @@ A set of environment variables, which define exactly one mutation, is passed on 
 A command must exit with an appropriate exit code.
 
 | Exit code | Description                                                                                                   |
-| :------   | :--------                                                                                                     |
+| :-------- | :------------------------------------------------------------------------------------------------------------ |
 | 0         | The mutation was killed. Which means that the test led to a failed test after the mutation was applied.       |
 | 1         | The mutation is alive. Which means that this could be a flaw in the test suite or even in the implementation. |
 | 2         | The mutation was skipped, since there are other problems e.g. compilation errors.                             |
@@ -303,7 +303,7 @@ Examples for exec commands can be found in the [scripts](/scripts/exec) director
 
 ### Arithmetic mutators
 #### arithmetic/base
-| Name	         | Original | Mutated |
+| Name           | Original | Mutated |
 | :------------- | :------- | :------ |
 | Plus           | +        | -       |
 | Minus          | -        | +       |
@@ -312,7 +312,7 @@ Examples for exec commands can be found in the [scripts](/scripts/exec) director
 | Modulus        | %        | *       |
 
 #### arithmetic/bitwise
-| Name	        | Original | Mutated |
+| Name          | Original | Mutated |
 | :------------ | :------- | :------ |
 | BitwiseAnd    | &        | &#124;  |
 | BitwiseOr     | &#124;   | &       |
@@ -322,16 +322,16 @@ Examples for exec commands can be found in the [scripts](/scripts/exec) director
 | ShiftLeft     | <<       | \>>     |
 
 #### arithmetic/assign_invert
-| Name	        | Original | Mutated |
-| :------------ | :------- | :------ |
-| AddAssign     | +=       | -=      |
-| SubAssign     | -=       | +=      |
-| MulAssign     | *=       | /=      |
-| QuoAssign     | /=       | *=      |
-| RemAssign     | %=       | *=      |
+| Name      | Original | Mutated |
+| :-------- | :------- | :------ |
+| AddAssign | +=       | -=      |
+| SubAssign | -=       | +=      |
+| MulAssign | *=       | /=      |
+| QuoAssign | /=       | *=      |
+| RemAssign | %=       | *=      |
 
 #### arithmetic/assignment
-| Name	           | Original | Mutated |
+| Name             | Original | Mutated |
 | :--------------- | :------- | :------ |
 | AddAssignment    | +=       | =       |
 | SubAssignment    | -=       | =       |
@@ -348,48 +348,48 @@ Examples for exec commands can be found in the [scripts](/scripts/exec) director
 
 ### Loop mutators
 #### loop/break
-Name	           | Original | Mutated  |
-| :--------------- | :------- | :------- |
-| Break            | break    | continue |
-| Continue         | continue | break    |
+| Name     | Original | Mutated  |
+| :------- | :------- | :------- |
+| Break    | break    | continue |
+| Continue | continue | break    |
 
 #### loop/condition
-Name	                 | Original | Mutated  |
-| :--------------------- | :------- | :------- |
-| for k < 100            | k < 100  | 1 < 1    |
-| for i := 0; i < 5; i++ | i < 5    | 1 < 1    |
+| Name                   | Original | Mutated |
+| :--------------------- | :------- | :------ |
+| for k < 100            | k < 100  | 1 < 1   |
+| for i := 0; i < 5; i++ | i < 5    | 1 < 1   |
 
 #### loop/range_break
 It is a loop/condition-like mutator in its purpose: removing iterations from code.  
 However, the implementation is slightly different. The mutator adds a break to the beginning of each range loop.
 
-Name	             | Original Body | Mutated Body |
+| Name               | Original Body | Mutated Body |
 | :----------------- | :------------ | :----------- |
 | for i,v := range x | without break | with break   |
 
 ### Numbers mutators
 #### numbers/incrementer
-Name	           | Original | Mutated  |
-| :--------------- | :------- | :------- |
-| IncrementInteger | 100      | 101      |
-| IncrementFloat   | 10.1     | 11.1     |
+| Name             | Original | Mutated |
+| :--------------- | :------- | :------ |
+| IncrementInteger | 100      | 101     |
+| IncrementFloat   | 10.1     | 11.1    |
 
 #### numbers/decrementer
-Name	           | Original | Mutated  |
-| :--------------- | :------- | :------- |
-| DecrementInteger | 100      | 99       |
-| DecrementFloat   | 10.1     | 9.1      |
+| Name             | Original | Mutated |
+| :--------------- | :------- | :------ |
+| DecrementInteger | 100      | 99      |
+| DecrementFloat   | 10.1     | 9.1     |
 
 ### Conditional mutators
 #### conditional/negated
-Name	                          | Original | Mutated  |
-| :------------------------------ | :------- | :------- |
-| GreaterThanNegotiation          | \>       | <=       |
-| LessThanNegotiation             | <        | \>=      |
-| GreaterThanOrEqualToNegotiation | \>=      | <        |
-| LessThanOrEqualToNegotiation    | <=       | \>       |
-| Equal                           | ==       | !=       |
-| NotEqual                        | !=       | ==       |
+| Name                            | Original | Mutated |
+| :------------------------------ | :------- | :------ |
+| GreaterThanNegotiation          | \>       | <=      |
+| LessThanNegotiation             | <        | \>=     |
+| GreaterThanOrEqualToNegotiation | \>=      | <       |
+| LessThanOrEqualToNegotiation    | <=       | \>      |
+| Equal                           | ==       | !=      |
+| NotEqual                        | !=       | ==      |
 
 If you are looking for simple comparison mutators - see [expression-mutators](#expression-mutators)
 
@@ -407,12 +407,12 @@ Empties branches of `else` statements.
 #### expression/comparison
 Searches for comparison operators, such as `>` and `<=`, and replaces them with similar operators to catch off-by-one errors, e.g. `>` is replaced by `>=`.
 
-Name	               | Original | Mutated  |
-| :------------------- | :------- | :------- |
-| GreaterThan          | \>       | \>=      |
-| LessThan             | <        | <=       |
-| GreaterThanOrEqualTo | \>=      | \>       |
-| LessThanOrEqualTo    | <=       | <        |
+| Name                 | Original | Mutated |
+| :------------------- | :------- | :------ |
+| GreaterThan          | \>       | \>=     |
+| LessThan             | <        | <=      |
+| GreaterThanOrEqualTo | \>=      | \>      |
+| LessThanOrEqualTo    | <=       | <       |
 
 #### expression/remove
 Searches for `&&` and <code>\|\|</code> operators and makes each term of the operator irrelevant by using `true` or `false` as replacements.
@@ -429,21 +429,21 @@ If `--config` is presented, the library will use the given config. Otherwise, no
 The config contains the following parameters:  
 
 
-| Name                 | Default value |Description                                    |
-| :------------------- | :------------ |:--------------------------------------------- |
-| skip_without_test    | true          | Skip files without _test.go tests. |
-| skip_with_build_tags | true          | If in _test.go file we have --build tag - then skip it. |
-| json_output          | false         | Make report.json file with a mutation test report. |
-| silent_mode          | false         | Do not print mutation stats. |
+| Name                 | Default value | Description                                                                                                                                                        |
+| :------------------- | :------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| skip_without_test    | true          | Skip files without _test.go tests.                                                                                                                                 |
+| skip_with_build_tags | true          | If in _test.go file we have --build tag - then skip it.                                                                                                            |
+| json_output          | false         | Make report.json file with a mutation test report.                                                                                                                 |
+| silent_mode          | false         | Do not print mutation stats.                                                                                                                                       |
 | exclude_dirs         | []string(nil) | Directories for excluding. In fact, there are not directories. These are the prefix for a path when we scan a file system. So this parameter is sensitive for args |
 
 ## <a name="write-mutators"></a>How do I write my own mutators?
 
-Each mutator must implement the `Mutator` interface of the [github.com/avito-tech/go-mutesting/mutator](https://godoc.org/github.com/avito-tech/go-mutesting/mutator#Mutator) package. The methods of the interface are described in detail in the source code documentation.
+Each mutator must implement the `Mutator` interface of the [github.com/VirtualRoyalty/go-mutesting/mutator](https://godoc.org/github.com/VirtualRoyalty/go-mutesting/mutator#Mutator) package. The methods of the interface are described in detail in the source code documentation.
 
-Additionally each mutator has to be registered with the `Register` function of the [github.com/avito-tech/go-mutesting/mutator](https://godoc.org/github.com/avito-tech/go-mutesting/mutator#Mutator) package to make it usable by the binary.
+Additionally each mutator has to be registered with the `Register` function of the [github.com/VirtualRoyalty/go-mutesting/mutator](https://godoc.org/github.com/VirtualRoyalty/go-mutesting/mutator#Mutator) package to make it usable by the binary.
 
-Examples for mutators can be found in the [github.com/avito-tech/go-mutesting/mutator](https://godoc.org/github.com/avito-tech/go-mutesting/mutator) package and its sub-packages.
+Examples for mutators can be found in the [github.com/VirtualRoyalty/go-mutesting/mutator](https://godoc.org/github.com/VirtualRoyalty/go-mutesting/mutator) package and its sub-packages.
 
 ## <a name="other-projects"></a>Other mutation testing projects and their flaws
 
@@ -467,4 +467,4 @@ All of them have significant flaws in comparison to go-mutesting:
 
 ## <a name="feature-request"></a>Can I make feature requests and report bugs and problems?
 
-Sure, just submit an [issue via the project tracker](https://github.com/avito-tech/go-mutesting/issues/new) and we will see what I can do.
+Sure, just submit an [issue via the project tracker](https://github.com/VirtualRoyalty/go-mutesting/issues/new) and we will see what I can do.

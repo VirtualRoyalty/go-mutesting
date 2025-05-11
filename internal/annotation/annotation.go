@@ -6,8 +6,8 @@ import (
 	"go/types"
 	"strings"
 
-	"github.com/avito-tech/go-mutesting/internal/filter"
-	"github.com/avito-tech/go-mutesting/mutator"
+	"github.com/VirtualRoyalty/go-mutesting/internal/filter"
+	"github.com/VirtualRoyalty/go-mutesting/mutator"
 )
 
 // Annotation constants define the comment patterns used to disable mutations

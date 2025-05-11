@@ -2,7 +2,7 @@ package console
 
 import (
 	"fmt"
-	"github.com/avito-tech/go-mutesting/internal/models"
+	"github.com/VirtualRoyalty/go-mutesting/internal/models"
 	"log"
 	"strings"
 

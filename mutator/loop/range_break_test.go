@@ -3,7 +3,7 @@ package loop
 import (
 	"testing"
 
-	"github.com/avito-tech/go-mutesting/test"
+	"github.com/VirtualRoyalty/go-mutesting/test"
 )
 
 func TestMutatorLoopRangeBreak(t *testing.T) {

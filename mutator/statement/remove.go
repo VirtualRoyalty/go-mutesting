@@ -1,13 +1,13 @@
 package statement
 
 import (
-	"github.com/avito-tech/go-mutesting/internal/annotation"
+	"github.com/VirtualRoyalty/go-mutesting/internal/annotation"
 	"go/ast"
 	"go/token"
 	"go/types"
 
-	"github.com/avito-tech/go-mutesting/astutil"
-	"github.com/avito-tech/go-mutesting/mutator"
+	"github.com/VirtualRoyalty/go-mutesting/astutil"
+	"github.com/VirtualRoyalty/go-mutesting/mutator"
 )
 
 func init() {
