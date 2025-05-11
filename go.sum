@@ -1,5 +1,5 @@
-github.com/VirtualRoyalty/osutil v1.0.0 h1:7HYkfF2XwCs1/RryoDGgsRzEkwkfV08RKs8sbj8WtfE=
-github.com/VirtualRoyalty/osutil v1.0.0/go.mod h1:z3l8zFVBqDIwwIHhnIgYdcw95tqrDBpyO6KweSzo4l0=
+github.com/VirtualRoyalty/osutil v1.0.1 h1:FRDrMzg9tHE6tXpZeMvZs9tt8BivnjnHINLk2UipH18=
+github.com/VirtualRoyalty/osutil v1.0.1/go.mod h1:NuOIXGIx6UOYkPWi+11P/ifrY4XOzY8UjZQ6xl7TG0k=
 github.com/avast/retry-go v3.0.0+incompatible h1:4SOWQ7Qs+oroOTQOYnAHqelpCO0biHSxpiH9JdtuBj0=
 github.com/avast/retry-go v3.0.0+incompatible/go.mod h1:XtSnn+n/sHqQIpZ10K1qAevBhOOCWBLXXy3hyiqqBrY=
 github.com/chengxilo/virtualterm v1.0.4 h1:Z6IpERbRVlfB8WkOmtbHiDbBANU7cimRIof7mk9/PwM=
