@@ -1,11 +1,13 @@
 module github.com/VirtualRoyalty/go-mutesting
 
-go 1.23.6
+go 1.24.1
+
+toolchain go1.24.3
 
 require (
 	github.com/fatih/color v1.18.0
 	github.com/jessevdk/go-flags v1.5.0
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	github.com/VirtualRoyalty/osutil v1.0.0
 	golang.org/x/tools v0.31.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -21,10 +23,10 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
-	github.com/schollz/progressbar/v3 v3.14.2 // indirect
+	github.com/schollz/progressbar/v3 v3.18.0 // indirect
 	github.com/termie/go-shutil v0.0.0-20140729215957-bcacb06fecae // indirect
-	github.com/ulikunitz/xz v0.5.11 // indirect
+	github.com/ulikunitz/xz v0.5.12 // indirect
 	golang.org/x/sys v0.31.0 // indirect
-	golang.org/x/term v0.17.0 // indirect
+	golang.org/x/term v0.30.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 )
