@@ -28,7 +28,7 @@ import (
 	"github.com/VirtualRoyalty/go-mutesting/internal/models"
 	"github.com/VirtualRoyalty/go-mutesting/internal/parser"
 	"github.com/jessevdk/go-flags"
-	"github.com/zimmski/osutil"
+	"github.com/zimmski/VirtualRoyalty"
 
 	"github.com/VirtualRoyalty/go-mutesting"
 	"github.com/VirtualRoyalty/go-mutesting/astutil"
