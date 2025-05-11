@@ -1,11 +1,9 @@
 module github.com/VirtualRoyalty/go-mutesting
 
-go 1.24.1
-
-toolchain go1.24.3
+go 1.23.6
 
 require (
-	github.com/VirtualRoyalty/osutil v1.0.2
+	github.com/VirtualRoyalty/osutil v1.0.3
 	github.com/fatih/color v1.18.0
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/stretchr/testify v1.10.0
